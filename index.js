@@ -2,7 +2,7 @@
 
 const userChoice = userInput => {
     userInput = userInput.toLowerCase()
-    if (userInput === "rock" || userInput === "paper" || userInput === "scissors") {
+    if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === "bomb") {
         return userInput
     } else {
         return "Error!"
@@ -53,6 +53,22 @@ const determineWinner = (userChoice, computerChoice) => {
             return "You Won!"
         }
     }
+
+    if(userChoice === "bomb") {
+        return "You BOMBED that!"
+    }
 }
 
+
+// Play game
+
+const playGame = (userInput, computerInput) => {
+    userInput = userChoice("paper")
+    computerInput = computerChoice()
+
+    console.log(determineWinner(userInput, computerInput))
+    
+}
+
+playGame()
 

@@ -1,4 +1,4 @@
-// User Choice
+// User's Choice
 
 const userChoice = userInput => {
     userInput = userInput.toLowerCase()
@@ -8,6 +8,8 @@ const userChoice = userInput => {
         return "Error!"
     }
 }
+
+// generate computers choice
 
 const computerChoice = () => {
     let randomNumber = Math.floor(Math.random() *3)
@@ -20,4 +22,37 @@ const computerChoice = () => {
         return "scissors"
     }
 }
+
+// Determine winner
+
+const determineWinner = (userChoice, computerChoice) => {
+    if(userChoice === computerChoice) {
+        return "This game is tied"
+    }
+
+    if (userChoice === "rock") {
+        if (computerChoice === "paper") {
+            return "Computer Won"
+        } else {
+            return "You Won!"
+        }
+    }
+    
+    if (userChoice === "paper") {
+        if (computerChoice === "scissors") {
+            return "Computer Won"
+        } else {
+            return "You Won!"
+        }
+    }
+
+    if (userChoice === "scissors") {
+        if (computerChoice === "rock") {
+            return "Computer Won"
+        } else {
+            return "You Won!"
+        }
+    }
+}
+
 
